@@ -19,6 +19,7 @@ var studentSchema = new Schema(
     hostel: String,
     roomno: String,
     floorno: Number,
+    reqid: String,
   },
   { versionKey: false }
 );

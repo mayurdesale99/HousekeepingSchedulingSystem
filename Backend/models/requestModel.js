@@ -4,11 +4,12 @@ mongoose.connect("mongodb://localhost:27017/HousekeepingDb");
 
 var Schema = mongoose.Schema;
 
-var userSchema = new Schema(
+var reqSchema = new Schema(
   {
     reqid: String,
     date: String,
     timings: String,
+    reqs: Array,
     hid: Number,
     status: String,
     stdid: Number,
@@ -16,5 +17,5 @@ var userSchema = new Schema(
   { versionKey: false }
 );
 
-var UserModel = mongoose.model("users", userSchema, "users");
-module.exports = UserModel;
+var ReqModel = mongoose.model("Requests", reqSchema, "Requests");
+module.exports = ReqModel;

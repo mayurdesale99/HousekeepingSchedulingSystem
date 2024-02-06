@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const studentRoutes = require("./Routes/studentRoutes");
-const userRoutes = require("./Routes/userRoutes");
+const requestRoutes = require("./Routes/requestRoutes");
 const staffRoutes = require("./Routes/staffRoutes");
 
 // Creating an instance of express application
@@ -15,11 +15,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 // Mounting the employee routes at /api endpoint
 app.use("/api", studentRoutes);
-app.use("/api", userRoutes);
+app.use("/api", requestRoutes);
 app.use("/api", staffRoutes);
 
 // Starting the server and listening on port 3005
 var server = app.listen(3005, function (req, res) {
   // Logging the URL where the application is running
-  console.log("View here: http://localhost:3005/api/students");
+  console.log("View here: http://localhost:3005/api/");
 });

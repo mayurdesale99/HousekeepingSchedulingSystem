@@ -15,6 +15,8 @@ var staffSchema = new Schema(
     city: String,
     phone: Number,
     gender: String,
+    status: String,
+    reqid: String,
   },
   { versionKey: false }
 );
