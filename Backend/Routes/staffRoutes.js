@@ -15,7 +15,7 @@ router.get("/staff", async function (req, res) {
 
 router.get("/staff/:id", async function (req, res) {
   var id = req.params.id;
-  const data = await StaffModel.findOne({ stdid: id }, { _id: 0 }).lean();
+  const data = await StaffModel.findOne({ hid: id }, { _id: 0 }).lean();
 
   if (!data) return res.status(404).send(`No record with ${id}`);
   else {
@@ -67,7 +67,6 @@ router.put("/staff", async function (req, res) {
     staff.state = req.body.state;
     staff.city = req.body.city;
     staff.phone = req.body.phone;
-    // staff.gender = req.body.gender;
     const updatedStaff = await staff.save();
     res.status(200).json({
       message: "Staff updated successfully",
