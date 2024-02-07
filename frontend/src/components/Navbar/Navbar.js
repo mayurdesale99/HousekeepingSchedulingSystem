@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [adminStatus, setAdminStatus] = useState(true);
@@ -14,43 +15,63 @@ const Sidebar = () => {
       </div>
       <div className="sidebar ">
         <div className="sidebar-item ">
-          <i class="bi bi-tv"></i>
+          <Link>
+            <i class="bi bi-tv"></i>
+          </Link>
           Dashboard
         </div>
         {!adminStatus && (
           <div>
             <div className="sidebar-item ">
-              <i class="bi bi-telegram"></i>My Requests
+              <Link>
+                <i class="bi bi-telegram"></i>My Requests
+              </Link>
             </div>
             <div className="sidebar-item ">
-              <i class="bi bi-joystick"></i>Status
+              <Link>
+                <i class="bi bi-joystick"></i>Status
+              </Link>
             </div>
             <div className="sidebar-item ">
-              <i class="bi bi-person-circle"></i>Profile
+              <Link>
+                <i class="bi bi-person-circle"></i>Profile
+              </Link>
             </div>
             <div className="sidebar-item ">
-              <i class="bi bi-card-checklist"></i>Feedback
+              <Link>
+                <i class="bi bi-card-checklist"></i>Feedback
+              </Link>
             </div>
           </div>
         )}
         {adminStatus && (
           <div>
             <div className="sidebar-item ">
-              <i class="bi bi-telegram"></i>Requests
+              <Link>
+                <i class="bi bi-telegram"></i>Requests
+              </Link>
             </div>
             <div className="sidebar-item ">
-              <i class="bi bi-person-circle"></i>Housekeeprs
+              <Link>
+                <i class="bi bi-person-circle"></i>Housekeepers
+              </Link>
             </div>
             <div className="sidebar-item ">
-              <i class="bi bi-person-bounding-box"></i>Students
+              <Link>
+                <i class="bi bi-person-bounding-box"></i>Students
+              </Link>
             </div>
             <div className="sidebar-item ">
-              <i class="bi bi-card-checklist"></i>Feedbacks
+              <Link>
+                <i class="bi bi-card-checklist"></i>Feedbacks
+              </Link>
             </div>
           </div>
         )}
         <div className="sidebar-item " onClick={login}>
-          <i class="bi bi-box-arrow-left"></i>Logout
+          <Link to="/login">
+            <i class="bi bi-box-arrow-left"></i>Logout
+          </Link>
         </div>
       </div>
     </div>

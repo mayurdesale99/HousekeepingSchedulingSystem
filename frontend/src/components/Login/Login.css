@@ -1,0 +1,6 @@
+.container {
+  display: inline-flexbox;
+}
+.text {
+  margin: 0 !important;
+}

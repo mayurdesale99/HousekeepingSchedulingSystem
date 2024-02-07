@@ -30,7 +30,6 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() }); // Return validation errors if any
     }
-
     try {
       // Create a new request object
       const newReq = new ReqModel({

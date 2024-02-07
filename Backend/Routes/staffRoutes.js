@@ -66,7 +66,8 @@ router.put(
   "/staff",
   [
     body("hid").notEmpty().withMessage("Staff ID is required"),
-    body("name").notEmpty().withMessage("Name is required"),
+    body("fname").notEmpty().withMessage("First Name is required"),
+    body("lname").notEmpty().withMessage("Last Name is required"),
     body("email").isEmail().withMessage("Invalid email format"),
     body("country").notEmpty().withMessage("Country is required"),
     body("state").notEmpty().withMessage("State is required"),
@@ -87,8 +88,8 @@ router.put(
           .status(404)
           .send("The staff you are trying to update does not exist.");
       } else {
-        staff.fname = req.body.name;
-        staff.lname = req.body.name;
+        staff.fname = req.body.fname;
+        staff.lname = req.body.lname;
         staff.email = req.body.email;
         staff.country = req.body.country;
         staff.state = req.body.state;
